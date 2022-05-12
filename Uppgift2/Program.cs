@@ -1,4 +1,6 @@
-﻿/*
+﻿using Uppgift2;
+
+/*
  * Uppgift 2.
  */
 
@@ -22,6 +24,17 @@ while(true)
     switch (choice)
     {
         case "1":
+            uint age;
+            int price;
+            do 
+            {
+                Console.Write("Enter age: ");
+            } while (!uint.TryParse(Console.ReadLine(), out age));
+
+            TicketCalculator calc = new TicketCalculator();
+            price = calc.FindPrice(age);
+
+            Console.WriteLine(@"The price is: {price}");
             break;
 
         case "2":
