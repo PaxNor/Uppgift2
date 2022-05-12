@@ -4,50 +4,59 @@
  * Uppgift 2.
  */
 
-const string banner =
+const string menu =
 @"          --- Main menu ---
 
 Select an option from the alternatives below.
 
-    1) Movie price calculator.
-    2) String looper.
-    3) String manipulator.
+    1) Get ticket price.
+    2) Get ticket price for group.
+    3) String looper.
+    4) String parser.
     Q) Quit application.";
 
 
 // main program loop
 while(true)
 {
-    Console.WriteLine(banner);
+    Console.WriteLine(menu);
     string choice = Console.ReadLine();
 
     switch (choice)
     {
         case "1":
-            uint age;
-            int price;
-            do 
-            {
-                Console.Write("Enter age: ");
-            } while (!uint.TryParse(Console.ReadLine(), out age));
-
-            TicketCalculator calc = new TicketCalculator();
-            price = calc.FindPrice(age);
+            uint age = IOUtil.GetUInt32(prompt: "Enter age: ");
+            int price = TicketCalculator.FindPrice(age);
 
             Console.WriteLine($"The price is: {price}");
             break;
 
         case "2":
+            uint groupSize;
+            int ticketSumTotal = 0;
+            do
+            {
+                groupSize = IOUtil.GetUInt32(prompt: "Enter group size: ");
+            } while (groupSize < 1);
+
+            for(int i = 0; i < groupSize; i++)
+            {
+                age = IOUtil.GetUInt32(prompt: $"Enter age for person {i + 1}: ");
+                ticketSumTotal += TicketCalculator.FindPrice(age);
+            }
+            Console.WriteLine($"Group size: {groupSize}\nSum total: {ticketSumTotal}");
+            break;
+
+        case "3":
             Console.Write("Enter text: ");
             string text = Console.ReadLine();
             for (int i = 0; i < 10; i++)
             {
-                Console.Write(text);
+                Console.Write("{0}{1}", text, i < 9 ? ", " : "\n");
             }
-            Console.WriteLine();
             break;
 
-        case "3":
+        case "4":
             string[] words;
             do
             {

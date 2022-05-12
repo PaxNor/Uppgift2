@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Uppgift2
 {
-    internal class TicketCalculator
+    static class TicketCalculator
     {
         private const int kidPrice = 80, pensionerPrice = 90, standardPrice = 120;
-        private const int pensionerTier = 65, adultTier = 20;
+        private const int adultTier = 20, pensionerTier = 65;
 
-        public int FindPrice(uint age)
+        public static int FindPrice(uint age)
         {
             if (age < adultTier) return kidPrice;
             else if (age >= pensionerTier) return pensionerPrice;
