@@ -8,7 +8,8 @@ const string banner =
 Select an option from the alternatives below.
 
     1) Movie price calculator.
-    2) String manipulation.
+    2) String looper.
+    3) String manipulator.
     Q) Quit application.";
 
 
@@ -18,12 +19,31 @@ while(true)
     Console.WriteLine(banner);
     string choice = Console.ReadLine();
 
-    switch(choice)
+    switch (choice)
     {
         case "1":
             break;
 
         case "2":
+            Console.Write("Enter text: ");
+            string text = Console.ReadLine();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(text);
+            }
+            Console.WriteLine();
+            break;
+
+        case "3":
+            string[] words;
+            do
+            {
+                Console.Write("Enter at least 3 words: ");
+                string text2 = Console.ReadLine();
+                words = text2.Split(' ');
+            } while (words.Length < 3);
+
+            Console.WriteLine($"Third word: {words[2]}");
             break;
 
         case "q":
@@ -35,6 +55,6 @@ while(true)
             break;
     }
 
-    Console.Clear();
+    //Console.Clear();
 }
 
