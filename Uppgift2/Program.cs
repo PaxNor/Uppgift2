@@ -34,7 +34,7 @@ while(true)
             TicketCalculator calc = new TicketCalculator();
             price = calc.FindPrice(age);
 
-            Console.WriteLine(@"The price is: {price}");
+            Console.WriteLine($"The price is: {price}");
             break;
 
         case "2":
