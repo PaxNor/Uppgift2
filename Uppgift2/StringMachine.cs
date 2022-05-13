@@ -28,8 +28,8 @@ namespace Uppgift2
             do
             {
                 Console.Write("Enter at least 3 words: ");
-                string text2 = Console.ReadLine();
-                words = text2.Split(' ');
+                string text = Console.ReadLine();
+                words = text.Split(' ');
             } while (words.Length < 3);
 
             Console.WriteLine($"Third word: {words[2]}");
