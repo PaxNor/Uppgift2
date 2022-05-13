@@ -8,7 +8,7 @@ namespace Uppgift2
 
 
 /*
- * Klassen implementerar hjälp metod för att hämta in och validera
+ * Klassen implementerar hjälpmetod för att hämta in och validera
  * andvändarinput från konsollen. Metoden upprepar försök tills 
  * dess att ett giltigt svar angivits.
  */
@@ -18,7 +18,7 @@ namespace Uppgift2
     {
         private static bool success;
 
-        private static uint GetUserInput(string prompt)
+        public static uint GetUserInput(string prompt)
         {
             uint output;
             do

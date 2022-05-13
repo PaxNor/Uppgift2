@@ -18,7 +18,7 @@ namespace Uppgift2
         private const int kidPrice = 80, pensionerPrice = 90, standardPrice = 120;
         private const int adultTier = 20, pensionerTier = 65;
 
-        public static int FindPrice(uint age)
+        private static int FindPrice(uint age)
         {
             if (age < adultTier) return kidPrice;
             else if (age >= pensionerTier) return pensionerPrice;
