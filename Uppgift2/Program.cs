@@ -2,12 +2,8 @@
 
 /*
  * Uppgift 2.
- * 
- * Todo:
- *  - Add methods for menu item 1 and 2 in TicketCalculator, eg QueryForPrice, QueryForGroupPrice
- *  - Add new class for the other menu items, eg StringMachine with methods PrintTenTimes and PrintThirdWord
- *  
- *  (Alternatively, use one class eg Assignment and put all methods in this one class)
+ *
+ * Implementerar meny och användar val.
  * 
  */
 

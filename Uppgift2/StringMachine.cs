@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Klassen implementerar metoder för uppgift 2 och 3
+ */
+
 namespace Uppgift2
 {
     static class StringMachine

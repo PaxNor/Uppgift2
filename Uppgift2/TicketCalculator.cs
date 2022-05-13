@@ -5,6 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Uppgift2
+
+/*
+ * Klassen implementerar QueryForPrice() och QueryForGroupPrice() som
+ * lösning på uppgift 1 och 1b. I klassen finns även hjälpfunktionen
+ * FindPrice() som returnerar biljett pris efter angiven ålder.
+ */
+
 {
     static class TicketCalculator
     {

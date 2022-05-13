@@ -5,12 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Uppgift2
+
+
+/*
+ * Klassen implementerar hjälp metod för att hämta in och validera
+ * andvändarinput från konsollen. Metoden upprepar försök tills 
+ * dess att ett giltigt svar angivits.
+ */
+
 {
     static class IOUtil
     {
         private static bool success;
 
-        private static uint GetUInt32(string prompt)
+        private static uint GetUserInput(string prompt)
         {
             uint output;
             do
@@ -20,30 +28,6 @@ namespace Uppgift2
             } while (success == false);
 
             return output;
-        }
-
-        public static uint GetUserInput(string prompt)
-        {
-            return GetUInt32(prompt);
-        }
-
-        // needs generic type
-        public static uint GetUserInput(string prompt, TypeCode type)
-        {
-            switch(type)
-            {
-                case TypeCode.Char:
-                    break;
-
-                case TypeCode.UInt32:
-                    break;
-
-                default:
-                    throw new NotImplementedException();
-                    
-            }
-
-            return 0;
-        }            
+        }    
     }
 }
