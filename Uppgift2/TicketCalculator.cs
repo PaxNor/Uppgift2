@@ -17,5 +17,30 @@ namespace Uppgift2
             else if (age >= pensionerTier) return pensionerPrice;
             else return standardPrice;
         }
+
+        public static void QueryForPrice()
+        {
+            uint age = IOUtil.GetUserInput(prompt: "Enter age: ");
+            int price = TicketCalculator.FindPrice(age);
+            Console.WriteLine($"The price is: {price}");
+        }
+
+        public static void QueryForGroupPrice()
+        {
+            uint age;
+            uint groupSize;
+            int ticketSumTotal = 0;
+            do
+            {
+                groupSize = IOUtil.GetUserInput(prompt: "Enter group size: ");
+            } while (groupSize < 1);
+
+            for (int i = 0; i < groupSize; i++)
+            {
+                age = IOUtil.GetUserInput(prompt: $"Enter age for person {i + 1}: ");
+                ticketSumTotal += TicketCalculator.FindPrice(age);
+            }
+            Console.WriteLine($"Group size: {groupSize}\nSum total: {ticketSumTotal}");
+        }
     }
 }

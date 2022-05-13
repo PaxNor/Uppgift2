@@ -2,11 +2,17 @@
 
 /*
  * Uppgift 2.
+ * 
+ * Todo:
+ *  - Add methods for menu item 1 and 2 in TicketCalculator, eg QueryForPrice, QueryForGroupPrice
+ *  - Add new class for the other menu items, eg StringMachine with methods PrintTenTimes and PrintThirdWord
+ *  
+ *  (Alternatively, use one class eg Assignment and put all methods in this one class)
+ * 
  */
 
 const string menu =
-@"          --- Main menu ---
-
+@"
 Select an option from the alternatives below.
 
     1) Get ticket price.
@@ -16,7 +22,6 @@ Select an option from the alternatives below.
     Q) Quit application.";
 
 
-// main program loop
 while(true)
 {
     Console.WriteLine(menu);
@@ -25,47 +30,19 @@ while(true)
     switch (choice)
     {
         case "1":
-            uint age = IOUtil.GetUInt32(prompt: "Enter age: ");
-            int price = TicketCalculator.FindPrice(age);
-
-            Console.WriteLine($"The price is: {price}");
+            TicketCalculator.QueryForPrice();
             break;
 
         case "2":
-            uint groupSize;
-            int ticketSumTotal = 0;
-            do
-            {
-                groupSize = IOUtil.GetUInt32(prompt: "Enter group size: ");
-            } while (groupSize < 1);
-
-            for(int i = 0; i < groupSize; i++)
-            {
-                age = IOUtil.GetUInt32(prompt: $"Enter age for person {i + 1}: ");
-                ticketSumTotal += TicketCalculator.FindPrice(age);
-            }
-            Console.WriteLine($"Group size: {groupSize}\nSum total: {ticketSumTotal}");
+            TicketCalculator.QueryForGroupPrice();
             break;
 
         case "3":
-            Console.Write("Enter text: ");
-            string text = Console.ReadLine();
-            for (int i = 0; i < 10; i++)
-            {
-                Console.Write("{0}{1}", text, i < 9 ? ", " : "\n");
-            }
+            StringMachine.PrintTenTimes();
             break;
 
         case "4":
-            string[] words;
-            do
-            {
-                Console.Write("Enter at least 3 words: ");
-                string text2 = Console.ReadLine();
-                words = text2.Split(' ');
-            } while (words.Length < 3);
-
-            Console.WriteLine($"Third word: {words[2]}");
+            StringMachine.PrintThirdWord();
             break;
 
         case "q":

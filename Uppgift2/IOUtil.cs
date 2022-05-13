@@ -10,7 +10,7 @@ namespace Uppgift2
     {
         private static bool success;
 
-        public static uint GetUInt32(string prompt)
+        private static uint GetUInt32(string prompt)
         {
             uint output;
             do
@@ -22,21 +22,25 @@ namespace Uppgift2
             return output;
         }
 
-        // generic return type
-        public static int GetInput(string prompt, TypeCode type)
+        public static uint GetUserInput(string prompt)
+        {
+            return GetUInt32(prompt);
+        }
+
+        // needs generic type
+        public static uint GetUserInput(string prompt, TypeCode type)
         {
             switch(type)
             {
-                case TypeCode.Boolean:
-                    break;
                 case TypeCode.Char:
                     break;
-                case TypeCode.Int16:
+
+                case TypeCode.UInt32:
                     break;
-                // and so on..
 
                 default:
-                    break;
+                    throw new NotImplementedException();
+                    
             }
 
             return 0;
