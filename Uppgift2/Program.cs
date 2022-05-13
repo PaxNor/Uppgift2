@@ -3,7 +3,7 @@
 /*
  * Uppgift 2.
  *
- * Implementerar meny och användar val.
+ * Implementerar meny och användarval.
  * 
  */
 
