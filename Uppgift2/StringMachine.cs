@@ -24,12 +24,13 @@ namespace Uppgift2
 
         public static void PrintThirdWord()
         {
+            StringSplitOptions splitOptions = StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries;
             string[] words;
             do
             {
                 Console.Write("Enter at least 3 words: ");
                 string text = Console.ReadLine();
-                words = text.Split(' ');
+                words = text.Split(' ', splitOptions);
             } while (words.Length < 3);
 
             Console.WriteLine($"Third word: {words[2]}");
