@@ -24,7 +24,10 @@ namespace Uppgift2
 
         public static void PrintThirdWord()
         {
-            StringSplitOptions splitOptions = StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries;
+            StringSplitOptions splitOptions =
+                StringSplitOptions.TrimEntries |
+                StringSplitOptions.RemoveEmptyEntries;
+
             string[] words;
             do
             {
